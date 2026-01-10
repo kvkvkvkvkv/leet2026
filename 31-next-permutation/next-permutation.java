@@ -8,12 +8,8 @@ class Solution {
             }
         }
 
-        if(index == -1) {
-            reverse(nums,0,nums.length-1);
-            return;
-        }
 
-        for(int i=nums.length-1;i>=0;i--) {
+        for(int i=nums.length-1;i>=0 && index!=-1;i--) {
             if(nums[index]<nums[i]) {
                 int temp = nums[index];
                 nums[index] = nums[i];
