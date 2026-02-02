@@ -3,21 +3,22 @@
 
 public class Solution extends Relation {
     public int findCelebrity(int n) {
-        int[] in = new int[n];
-        for(int i=0;i<n;i++) {
-            for(int j=0;j<n;j++) {
-                if(i!=j && knows(i,j)) {
-                    in[j]++;
-                    in[i]--;
-                }
+        int l = 0;
+        int h = n-1;
+
+        while(l<h) {
+            if(knows(l,h)) {
+                l++;
+            } else {
+                h--;
             }
         }
 
         for(int i=0;i<n;i++) {
-            if(in[i]==(n-1)) {
-                return i;
+            if(l!=i && (knows(l,i) || !knows(i,l))) {
+                return -1;
             }
         }
-        return -1;
+        return l;
     }
 }
