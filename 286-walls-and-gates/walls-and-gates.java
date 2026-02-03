@@ -18,7 +18,7 @@ class Solution {
                 int c = dir[1]+currentGate[1];
 
                 if(r>=0 && c>=0 && r<rooms.length && c<rooms[0].length
-                && 1+currentGate[2]<rooms[r][c]) {
+                && rooms[r][c] == Integer.MAX_VALUE) {
                     rooms[r][c] = 1 + currentGate[2];
                     gates.add(new int[]{r,c,rooms[r][c]});
                 }
