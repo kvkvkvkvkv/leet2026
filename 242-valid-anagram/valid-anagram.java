@@ -11,7 +11,17 @@ class Solution {
             map2.put(ele, map2.getOrDefault(ele, 0)+1);
         }
 
-        return map1.equals(map2);
+        if(map1.size()!=map2.size()) {
+            return false;
+        }
+
+        for(char key:map1.keySet()) {
+            if(map2.get(key) == null || !(map2.get(key)).equals(map1.get(key))) {
+                return false;
+            }
+        }
+
+        return true;
         
     }
 }
