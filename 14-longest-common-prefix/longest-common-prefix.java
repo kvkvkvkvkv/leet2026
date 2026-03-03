@@ -21,3 +21,5 @@ class Solution {
         return prev;
     }
 }
+
+// can also do trie
